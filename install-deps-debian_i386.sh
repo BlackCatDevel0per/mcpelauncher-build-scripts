@@ -46,4 +46,4 @@ as_root apt install -y build-essential clang cmake gettext:i386 git \
                        qml-module-qt-labs-folderlistmodel:i386 \
                        qml-module-qt-labs-settings:i386 qtbase5-dev:i386 \
                        qtdeclarative5-dev:i386 qttools5-dev:i386 qttools5-dev-tools:i386 \
-                       qtwebengine5-dev:i386 texinfo:i386
+                       qtwebengine5-dev:i386 texinfo
