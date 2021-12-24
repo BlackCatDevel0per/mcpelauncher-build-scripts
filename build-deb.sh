@@ -135,8 +135,8 @@ done
 # Collect other package info needed for the control file.
 status "==> Collecting system/software info for the package..."
 # Set correct architecture (only x86 and x86_64 currently supported).
-#arch=$(dpkg --print-architecture)
-arch=i386 # Force i386 arch
+arch=$(dpkg --print-architecture)
+#arch=i386 # Force i386 arch
 # Set correct dependencies for the package.
 case $arch in
   amd64) libdir=/usr/lib/x86_64-linux-gnu ;;
