@@ -33,6 +33,7 @@ as_root() {
   fi
 }
 # Launch apt to install dependencies.
+# For amd64 first run - dpkg --add-architecture i386
 as_root apt install -y build-essential clang cmake gettext git \
                        libasound2 libcurl4-openssl-dev libegl1-mesa-dev \
                        libevdev-dev libpng-dev libprotobuf-dev libpulse-dev \
