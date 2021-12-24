@@ -33,17 +33,17 @@ as_root() {
   fi
 }
 # Launch apt to install dependencies.
-# For amd64 first run - dpkg --add-architecture i386
-as_root apt install -y build-essential clang cmake gettext git \
-                       libasound2 libcurl4-openssl-dev libegl1-mesa-dev \
-                       libevdev-dev libpng-dev libprotobuf-dev libpulse-dev \
-                       libqt5svg5-dev libssl-dev libtool libudev-dev \
-                       libuv1-dev libx11-dev libxi-dev libzip-dev ninja-build \
-                       protobuf-compiler qml-module-qtquick2 \
-                       qml-module-qtquick-controls \
-                       qml-module-qtquick-controls2 qml-module-qtquick-dialogs \
-                       qml-module-qtquick-layouts qml-module-qtquick-window2 \
-                       qml-module-qt-labs-folderlistmodel \
-                       qml-module-qt-labs-settings qtbase5-dev \
-                       qtdeclarative5-dev qttools5-dev qttools5-dev-tools \
-                       qtwebengine5-dev texinfo
+# For amd64 first run - dpkg --add-architecture i386 && apt update
+as_root apt install -y build-essential clang cmake gettext:i386 git \
+                       libasound2:i386 libcurl4-openssl-dev:i386 libegl1-mesa-dev:i386 \
+                       libevdev-dev:i386 libpng-dev:i386 libprotobuf-dev:i386 libpulse-dev:i386 \
+                       libqt5svg5-dev:i386 libssl-dev:i386 libtool:i386 libudev-dev:i386 \
+                       libuv1-dev:i386 libx11-dev:i386 libxi-dev:i386 libzip-dev:i386 ninja-build:i386 \
+                       protobuf-compiler:i386 qml-module-qtquick2:i386 \
+                       qml-module-qtquick-controls:i386 \
+                       qml-module-qtquick-controls2:i386 qml-module-qtquick-dialogs:i386 \
+                       qml-module-qtquick-layouts:i386 qml-module-qtquick-window2:i386 \
+                       qml-module-qt-labs-folderlistmodel:i386 \
+                       qml-module-qt-labs-settings:i386 qtbase5-dev:i386 \
+                       qtdeclarative5-dev:i386 qttools5-dev:i386 qttools5-dev-tools:i386 \
+                       qtwebengine5-dev:i386 texinfo:i386
