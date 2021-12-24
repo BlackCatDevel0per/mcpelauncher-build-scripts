@@ -57,7 +57,7 @@ builddir=$(mktemp -d)
 cd $builddir
 # Set package directory.
 pkgdir=$(mktemp -d)/mcpelauncher-thesonicmaster
-# Ensure we are compiling with Clang.
+# Ensure we are compiling with Clang(gcc).
 export CC=gcc CXX=g++
 # Set compiler flags, but don't override existing flags.
 if [ -z "$CFLAGS" ]; then
