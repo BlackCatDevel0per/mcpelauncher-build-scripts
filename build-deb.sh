@@ -57,6 +57,19 @@ builddir=$(mktemp -d)
 cd $builddir
 # Set package directory.
 pkgdir=$(mktemp -d)/mcpelauncher-thesonicmaster
+# Ensure we are compiling with Clang(gcc). For Clang need lld
+export CC=clang CXX=clang++
+# Set compiler flags, but don't override existing flags.
+if [ -z "$CFLAGS" ]; then
+  # Optimise for size (-Os)
+  export CFLAGS="-Os"
+  #export CFLAGS="-Os -m32"
+fi
+if [ -z "$CXXFLAGS" ]; then
+  # Optimise for size (-Os)
+  export CXXFLAGS="-Os"
+  #export CXXFLAGS="-Os -m32"
+fi
 # Check and set version version
 status2 "==> Checking version... "
 ver="$(curl -Ls https://downloads.sourceforge.net/mcpelauncher-thesonicmaster/latest.version)"
@@ -77,8 +90,8 @@ rm mcpelauncher-thesonicmaster-$ver.tar.xz
 # Change to source directory.
 cd mcpelauncher-thesonicmaster-$ver
 # Specify cmake options for the build.
-cmake_options="-DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -Wno-dev -G Ninja -DCMAKE_CXX_FLAGS=-Os -DCMAKE_C_FLAGS=-Os"
-#cmake_options="-DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -Wno-dev -G Ninja"
+#cmake_options="-DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -Wno-dev -G Ninja -DCMAKE_CXX_FLAGS=-m32 -DCMAKE_CFLAGS=-m32"
+cmake_options="-DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -Wno-dev -G Ninja"
 # Build MSA.
 status "==> Building MSA (for Xbox Live)..."
 cd msa
