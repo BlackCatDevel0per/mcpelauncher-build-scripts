@@ -91,7 +91,7 @@ rm mcpelauncher-thesonicmaster-$ver.tar.xz
 cd mcpelauncher-thesonicmaster-$ver
 # Specify cmake options for the build.
 #cmake_options="-DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -Wno-dev -G Ninja -DCMAKE_CXX_FLAGS=-m32 -DCMAKE_CFLAGS=-m32"
-cmake_options="-DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -Wno-dev -G Ninja"
+cmake_options="-DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -Wno-dev -G Ninja -LINK_FLAGS=-m32"
 # Build MSA.
 status "==> Building MSA (for Xbox Live)..."
 cd msa
