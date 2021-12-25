@@ -62,13 +62,13 @@ export CC=gcc CXX=g++
 # Set compiler flags, but don't override existing flags.
 if [ -z "$CFLAGS" ]; then
   # Optimise for size (-Os)
-  #export CFLAGS="-Os"
-  export CFLAGS="-Os -m32"
+  export CFLAGS="-Os"
+  #export CFLAGS="-Os -m32"
 fi
 if [ -z "$CXXFLAGS" ]; then
   # Optimise for size (-Os)
-  #export CXXFLAGS="-Os"
-  export CXXFLAGS="-Os -m32"
+  export CXXFLAGS="-Os"
+  #export CXXFLAGS="-Os -m32"
 fi
 # Check and set version version
 status2 "==> Checking version... "
@@ -91,7 +91,7 @@ rm mcpelauncher-thesonicmaster-$ver.tar.xz
 cd mcpelauncher-thesonicmaster-$ver
 # Specify cmake options for the build.
 #cmake_options="-DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -Wno-dev -G Ninja -DCMAKE_CXX_FLAGS=-m32 -DCMAKE_CFLAGS=-m32"
-cmake_options="-DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -Wno-dev -G Ninja -LINK_FLAGS=-m32"
+cmake_options="-DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -Wno-dev -G Ninja"
 # Build MSA.
 status "==> Building MSA (for Xbox Live)..."
 cd msa
